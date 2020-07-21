@@ -60,7 +60,7 @@ const collName1 = "users";
 const collName2 = "leads";
 const collName3 = "requests";
 //mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false
-const uri = `mongodb+srv://${process.env.D_EMAIL}:${process.env.D_PASSWORD}@cluster0-lyx1k.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.D_EMAIL}:${process.env.D_PASSWORD}@cluster0-lyx1k.mongodb.net/CRM?retryWrites=true&w=majority`;
 // const uri = `mongodb://localhost:27017/?readPreference=primary&ssl=false`;
 const mongoClient = mongodb.MongoClient;
 
