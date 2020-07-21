@@ -34,7 +34,7 @@ const transporter = nodemailer.createTransport({
 
 async function Mail(toMail, link, data) {
   let mailOptions = {
-    from: process.env.EMAIL,
+    from: process.env.C_EMAIL,
     to: toMail,
     subject: "verification link",
 
