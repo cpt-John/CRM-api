@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const bcrypt = require("bcrypt");
-const cryptoRandomString = require("crypto-random-string");
 const mongodb = require("mongodb");
 const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
