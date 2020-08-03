@@ -236,7 +236,7 @@ app.post("/register", async function (req, res) {
     { email: req.body["email"], type: "mailVerification" },
     key
   );
-  let link = token;
+  let link = process.env.C_EMAIL + "/#/login/" + token;
   let text = `use token to verify: ${token}`;
   let result = await Mail(req.body["email"], link, text).catch((err) => {
     res.status(500).json({ message: "filed to send mail" });
@@ -339,7 +339,7 @@ app.post("/resetPassLink", async function (req, res) {
     key,
     { expiresIn: token_expiry + "m" }
   );
-  let link = process.env.RPASSLINK + token;
+  let link = process.env.C_EMAIL + "/#/resetpass/" + token;
   let text = `reset password token is valid only for ${token_expiry} minute(s)
                 token is : ${token}`;
   let result = await Mail(req.body["email"], link, text).catch((err) => {
