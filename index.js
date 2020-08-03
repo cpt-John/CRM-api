@@ -353,7 +353,7 @@ app.post("/resetPassLink", async function (req, res) {
 });
 
 app.post("/resetPass", async function (req, res) {
-  if (!req.body["jwt"] || !req.body["new_password"]) {
+  if (!req.body["jwt"] || !req.body["password"]) {
     res.status(400).json({
       message: "token or password missing",
     });
@@ -382,7 +382,7 @@ app.post("/resetPass", async function (req, res) {
     //new pass
     let hash;
     try {
-      hash = await bcrypt.hash(req.body["new_password"], saltRounds);
+      hash = await bcrypt.hash(req.body["password"], saltRounds);
     } catch {
       res.status(400).json({
         message: "hashing failed",
