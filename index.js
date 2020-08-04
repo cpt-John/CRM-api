@@ -152,6 +152,9 @@ app.post("/login", async function (req, res) {
     } else if (result["verified"] !== true) {
       res.status(400).json({ message: "email is not verified" });
       return;
+    } else if (result["role"] > 4) {
+      res.status(400).json({ message: "You are not yet admitted" });
+      return;
     }
   } catch (err) {
     res.status(500).json({ message: "filed to retreive" });
